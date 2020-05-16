@@ -44,7 +44,7 @@ public class SumWSTest {
             sumRequest.setNum2(12);
             SumResponse response = port.calculateSum(sumRequest);
 
-            System.out.println(response.getResult());
+           System.out.println(response.getResult());
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

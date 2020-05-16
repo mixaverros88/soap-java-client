@@ -19,7 +19,13 @@
         <spring.version>4.2.0.RELEASE</spring.version>
         <javax.servlet.version>2.5</javax.servlet.version>
         <apache.cxf.frontend.version>3.3.3</apache.cxf.frontend.version>
+        <commons-httpclient>3.1</commons-httpclient>
+        <commons-codec>1.9</commons-codec>
+        <commons-httpclient>3.1</commons-httpclient>
+        <junit>4.12</junit>
 
+        <maven-war-plugin>3.1.0</maven-war-plugin>
+        <org.apache.tomcat.maven>2.2</org.apache.tomcat.maven>
     </properties>
 
     <dependencies>
@@ -42,12 +48,12 @@
         <dependency>
             <groupId>commons-httpclient</groupId>
             <artifactId>commons-httpclient</artifactId>
-            <version>3.1</version>
+            <version>${commons-httpclient}</version>
         </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
-            <version>1.9</version>
+            <version>${commons-codec}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -64,31 +70,27 @@
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>${javax.version}</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-security</artifactId>
             <version>${cxf.version}</version>
             <scope>compile</scope>
         </dependency>
-
         <dependency>
             <groupId>commons-httpclient</groupId>
             <artifactId>commons-httpclient</artifactId>
-            <version>3.1</version>
+            <version>${commons-httpclient}</version>
         </dependency>
-
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
-            <version>1.9</version>
+            <version>${commons-codec}</version>
         </dependency>
 
         <dependency>
@@ -100,13 +102,10 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit}</version>
             <scope>compile</scope>
         </dependency>
-
     </dependencies>
-
-
 
 
     <build>
@@ -114,7 +113,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>${maven-war-plugin}</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
@@ -134,8 +133,7 @@
                                 <wsdlOption>
                                     <wsdl>${basedir}/src/main/resources/sumService.wsdl</wsdl>
                                 </wsdlOption>
-                            </wsdlOptions>
-                        </configuration>
+                            </wsdlOptions>                        </configuration>
                         <goals>
                             <goal>wsdl2java</goal>
                         </goals>
@@ -145,11 +143,11 @@
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
+                <version>${org.apache.tomcat.maven}</version>
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
-                    <server>TomcatServer</server>
-                    <path>/myapp</path>
+                    <server>stage-server</server>
+                    <update>true</update>
                 </configuration>
             </plugin>
         </plugins>
