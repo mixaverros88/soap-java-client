@@ -25,7 +25,7 @@
         <http.port>8080</http.port>
         <cxf.version>3.3.3</cxf.version>
         <javax.version>7.0</javax.version>
-        <spring.version>4.2.0.RELEASE</spring.version>
+        <spring.version>5.2.5.RELEASE</spring.version>
         <javax.servlet.version>2.5</javax.servlet.version>
         <apache.cxf.frontend.version>3.3.3</apache.cxf.frontend.version>
         <commons-httpclient>3.1</commons-httpclient>
