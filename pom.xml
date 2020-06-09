@@ -128,7 +128,6 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
@@ -143,7 +142,8 @@
                                 <wsdlOption>
                                     <wsdl>${basedir}/src/main/resources/sumService.wsdl</wsdl>
                                 </wsdlOption>
-                            </wsdlOptions>                        </configuration>
+                            </wsdlOptions>
+                        </configuration>
                         <goals>
                             <goal>wsdl2java</goal>
                         </goals>
